@@ -1,0 +1,67 @@
+﻿@model Tuple<List<ShawnaThai_Eiei.Models.History_Sell>>
+
+<!DOCTYPE html>
+<html lang="en">
+@*,List<ShawnaThai_Eiei.Models.Product_Rice>*@
+<head>
+
+    <style type="text/css">
+        .masthead {
+            height: 1180px
+        }
+    </style>
+</head>
+@using (Html.BeginForm())
+{
+    <body id="page-top">
+        <!-- Header -->
+        @Html.AntiForgeryToken()
+        <header class="masthead">
+            <div class="container">
+                <div class="intro-text">
+
+                    <h1 align="center">หน้า ประวัติการซื้อ</h1>
+                    <font color=black>
+                        <table align="center" border="1" wsidth="80%" bgcolor="#FFFFCC" cellspacing="20">
+                            <tr>
+                                <td align="center" width="15%">วันเเละเวลาที่ซื้อ</td>
+                                <td align="center" width="15%">รหัสสินค้า</td>
+
+                            </tr>
+                            @foreach (var a in Model.Item1)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => a.Sell_Date)</td>
+                                    <td>@Html.DisplayFor(modelItem => a.ProD_IDSell)</td>
+                                   
+                                </tr>
+                            }
+                            @*@foreach (var b in Model.Item2)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => b.ProD_Topic)</td>
+                                    <td>@Html.DisplayFor(modelItem => b.ProD_Moisture)</td>
+                                    <td>@Html.DisplayFor(modelItem => b.ProD_Weight)</td>
+                                    <td>@Html.DisplayFor(modelItem => b.ProD_Price)</td>
+                                    <td>@Html.DisplayFor(modelItem => b.RiceType)</td>
+                                    <td>@Html.DisplayFor(modelItem => b.Farmer_IDCard)</td>
+
+                                </tr>
+                            }*@
+
+
+                             
+                          
+                        </table>
+
+
+                    </font>
+                </div>
+
+            </div>
+
+        </header>
+
+    </body>
+}
+</html>
